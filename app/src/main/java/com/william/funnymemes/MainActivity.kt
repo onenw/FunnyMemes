@@ -6,11 +6,6 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -18,7 +13,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -26,7 +21,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.william.funnymemes.model.Meme
 import com.william.funnymemes.screens.DetailsScreen
+import com.william.funnymemes.screens.HomePage
+import com.william.funnymemes.screens.LoginPage
 import com.william.funnymemes.screens.MainScreen
+import com.william.funnymemes.screens.SignupPage
+import com.william.funnymemes.ui.theme.AuthViewModel
 import com.william.funnymemes.ui.theme.FunnyMemesTheme
 import com.william.funnymemes.utils.RetrofitInstance
 import kotlinx.coroutines.Dispatchers
@@ -84,6 +83,29 @@ class MainActivity : ComponentActivity() {
                     composable(route = "MainScreen"){
                         MainScreen(memesList = memesList, navController = navController)
                     }
+
+                    composable (route = "HomeScreen"){
+                        HomePage(
+                            navController = navController,
+                            modifier = Modifier,
+                            authViewModel = AuthViewModel
+                        )
+                    }
+                    composable (route = "LoginPage"){
+                        LoginPage(
+                            navController = navController,
+                            modifier = TODO(),
+                            authViewModel = TODO(),
+                        )
+                    }
+                    composable (route = "HomeScreen?"){
+                        SignupPage(
+                            navController = navController,
+                            modifier = TODO(),
+                            authViewModel = TODO()
+                        )
+                    }
+
                     composable(route = "DetailsScreen?name={name}&url={url}",
                         arguments = listOf(
                             navArgument(name = "name"){

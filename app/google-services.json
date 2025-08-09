@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "489776033144",
+    "project_id": "funnymemes-b8eac",
+    "storage_bucket": "funnymemes-b8eac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:489776033144:android:1f113fc87a085db4f06c8d",
+        "android_client_info": {
+          "package_name": "com.william.funnymemes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDkUltHRb3BOY3lh8TF7Zvs6wdUMfrihGM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
